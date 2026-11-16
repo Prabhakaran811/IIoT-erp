@@ -1,0 +1,116 @@
+/* wider drawer for the items section */
+.cm-drawer.dc-drawer { width: 760px; }
+
+/* selects (same look as inputs) */
+.cm-field select {
+  padding: 10px 12px;
+  border: 1px solid #d6ddd2;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  background: #fff;
+}
+.cm-field select:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(30, 90, 64, 0.12);
+}
+.cm-field select.error { border-color: #c62828; }
+.cm-field select:disabled { background: #f0f3ed; color: #6b7a6d; }
+
+/* stat icon variants */
+.cm-stat-icon.grey { background: #eceeea; color: #5d6b5f; }
+.cm-stat-icon.info { background: #e7eefb; color: #2f5fb3; }
+
+.dc-tabs { overflow-x: auto; max-width: 100%; }
+.dc-tabs button { white-space: nowrap; }
+
+/* table */
+.dc-type {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--green);
+  border: 1px solid #dfe6da;
+}
+
+/* status badges */
+.dc-status.draft     { background: #eceeea; color: #5d6b5f; }
+.dc-status.issued    { background: #e7eefb; color: #2f5fb3; }
+.dc-status.delivered { background: #e3f3e8; color: #1e7a45; }
+.dc-status.cancelled { background: #fdeceb; color: #c62828; }
+
+/* items in form */
+.dc-items-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 22px;
+  margin-bottom: 12px;
+}
+.dc-no-margin { margin: 0 !important; }
+.dc-add { padding: 7px 14px; }
+
+.dc-item {
+  border: 1px solid #e1e7dc;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+  background: #fafbf8;
+}
+.dc-item-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+
+/* view drawer */
+.dc-info { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 20px; }
+.dc-row { display: flex; flex-direction: column; padding: 6px 0; font-size: 14px; }
+.dc-row span { font-size: 12px; color: #6b7a6d; }
+.dc-head-actions { display: flex; gap: 4px; }
+.dc-head-actions .cm-icon-btn { color: #fff; }
+.dc-head-actions .cm-icon-btn:hover { background: var(--green); color: #fff; }
+.dc-items-table th, .dc-items-table td { padding: 10px 12px; font-size: 13px; }
+.dc-items-table tfoot td { background: #fafbf8; border-top: 2px solid var(--yellow); }
+.dc-note { margin: 0; font-size: 14px; color: #3d4a3f; white-space: pre-wrap; }
+
+@media (max-width: 600px) {
+  .dc-info { grid-template-columns: 1fr; }
+}
+
+/* print: only the challan drawer */
+@media print {
+  body * { visibility: hidden; }
+  .dc-print, .dc-print * { visibility: visible; }
+  .dc-print {
+    position: absolute !important;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    height: auto !important;
+    box-shadow: none !important;
+    animation: none !important;
+  }
+  .dc-print .cm-drawer-body { overflow: visible !important; }
+  .dc-print .cm-drawer-head { background: #fff !important; color: #000 !important; border-bottom: 2px solid #000; }
+  .dc-print .cm-drawer-head h3 { color: #000 !important; }
+  .dc-no-print { display: none !important; }
+}
+
+
+.dc-form-error {
+  margin-right: auto;
+  align-self: center;
+  color: #c62828;
+  font-size: 13px;
+  font-weight: 600;
+}

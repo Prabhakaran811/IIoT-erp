@@ -1,0 +1,16 @@
+:root {
+  --green-dark: #123C2D;
+  --green: #1E5A40;
+  --yellow: #F2C94C;
+  --bg: #F5F7F2;
+  --charcoal: #202820;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--charcoal);
+}
