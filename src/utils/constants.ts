@@ -1,6 +1,5 @@
 import {
-  LayoutDashboard, Users, FolderKanban, Cpu, Boxes,
-  FileText, ShoppingCart, UserCog, BarChart3, Settings,
+  LayoutDashboard, Users, FolderKanban, 
   type LucideIcon,
   Truck,
   Wrench,
