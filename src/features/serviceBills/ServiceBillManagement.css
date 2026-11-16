@@ -1,0 +1,151 @@
+.cm-drawer.sb-drawer { width: 760px; }
+
+/* selects look like inputs */
+.cm-field select {
+  padding: 10px 12px;
+  border: 1px solid #d6ddd2;
+  border-radius: 10px;
+  font-size: 14px;
+  font-family: inherit;
+  background: #fff;
+}
+.cm-field select:focus {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(30, 90, 64, 0.12);
+}
+.cm-field select.error, .cm-field textarea.error { border-color: #c62828; }
+
+/* stat icon variants */
+.cm-stat-icon.grey { background: #eceeea; color: #5d6b5f; }
+.sb-stat-money { font-size: 20px !important; }
+
+.sb-tabs { overflow-x: auto; max-width: 100%; }
+.sb-tabs button { white-space: nowrap; }
+.cm-icon-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.cm-icon-btn:disabled:hover { background: transparent; color: #4d5c50; }
+
+/* table */
+.sb-amount { font-weight: 800; font-size: 15px; color: var(--green-dark); margin-bottom: 3px; }
+.sb-chips { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+.sb-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--green);
+  border: 1px solid #dfe6da;
+}
+
+/* status badges */
+.sb-status.draft     { background: #eceeea; color: #5d6b5f; }
+.sb-status.approved  { background: #e3f3e8; color: #1e7a45; }
+.sb-status.cancelled { background: #fdeceb; color: #c62828; }
+
+/* form */
+.sb-warn {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fdf3d3;
+  color: #7a5c00;
+  font-size: 13px;
+}
+.sb-hint { display: block; margin-top: 8px; color: #6b7a6d; font-size: 12px; }
+.sb-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 22px;
+  margin-bottom: 12px;
+}
+.sb-no-margin { margin: 0 !important; }
+.sb-add { padding: 7px 14px; }
+.sb-row {
+  border: 1px solid #e1e7dc;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+  background: #fafbf8;
+}
+.sb-row-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+.sb-row-amount { margin-left: auto; color: var(--charcoal); }
+.sb-form-error {
+  margin-right: auto;
+  align-self: center;
+  color: #c62828;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* totals */
+.sb-totals {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--bg);
+  border: 1px solid #dfe6da;
+}
+.sb-totals-title { font-weight: 700; margin-bottom: 10px; color: var(--green-dark); }
+.sb-totals-title small { font-weight: 400; color: #6b7a6d; margin-left: 6px; }
+.sb-total-row { display: flex; justify-content: space-between; padding: 5px 0; font-size: 14px; }
+.sb-total-row span { color: #4d5c50; }
+.sb-total-row.grand {
+  margin-top: 6px;
+  padding-top: 10px;
+  border-top: 2px solid var(--yellow);
+  font-size: 16px;
+}
+.sb-total-row.grand strong { color: var(--green-dark); }
+.sb-totals-view { margin-left: auto; max-width: 340px; background: #fff; }
+
+/* view drawer */
+.sb-info { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 20px; }
+.sb-info-row { display: flex; flex-direction: column; padding: 6px 0; font-size: 14px; }
+.sb-info-row span { font-size: 12px; color: #6b7a6d; }
+.sb-head-actions { display: flex; gap: 4px; }
+.sb-head-actions .cm-icon-btn { color: #fff; }
+.sb-head-actions .cm-icon-btn:hover { background: var(--green); color: #fff; }
+.sb-small-table th, .sb-small-table td { padding: 10px 12px; font-size: 13px; }
+.sb-right { text-align: right !important; white-space: nowrap; }
+.sb-note { margin: 0; font-size: 14px; color: #3d4a3f; white-space: pre-wrap; }
+.sb-signature { margin-top: 56px; width: 220px; margin-left: auto; font-size: 13px; color: #6b7a6d; }
+.sb-sign-line { border-top: 1px solid #202820; margin-bottom: 6px; }
+
+@media (max-width: 600px) {
+  .sb-info { grid-template-columns: 1fr; }
+}
+
+/* print: only the invoice drawer */
+@media print {
+  body * { visibility: hidden; }
+  .sb-print, .sb-print * { visibility: visible; }
+  .sb-print {
+    position: absolute !important;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    height: auto !important;
+    box-shadow: none !important;
+    animation: none !important;
+  }
+  .sb-print .cm-drawer-body { overflow: visible !important; }
+  .sb-print .cm-drawer-head { background: #fff !important; color: #000 !important; border-bottom: 2px solid #000; }
+  .sb-print .cm-drawer-head h3 { color: #000 !important; }
+  .sb-no-print { display: none !important; }
+}

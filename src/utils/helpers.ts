@@ -28,3 +28,11 @@ export const formatDate = (d?: string) =>
     : "-";
 
 export const toDateInput = (d?: string) => (d ? d.slice(0, 10) : "");
+
+export const formatMoney = (n: number) =>
+  new Intl.NumberFormat("en-IN", {
+    style: "currency",
+    currency: "INR",
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(n || 0);
