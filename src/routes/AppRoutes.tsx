@@ -9,11 +9,13 @@ import DeliveryChallanManagement from "../features/deliveryChallans/pages/Delive
 import ServiceReportManagement from "../features/serviceReports/pages/ServiceReportManagement";
 import ServiceBillManagement from "../features/serviceBills/pages/ServiceBillManagement";
 import CustomerPaymentManagement from "../features/customerPayments/pages/CustomerPayments";
+import EmployeeManagement from "../features/employees/pages/EmployeeManagement";
+import LeaveManagement from "../features/employeeLeaves/pages/LeaveManagement";
 import PageHeader from "../components/common/PageHeader";
 import { NAV_SECTIONS } from "../utils/constants";
 
 const placeholders = NAV_SECTIONS.flatMap((s) => s.items).filter(
-  (i) => !["/dashboard", "/customers", "/projects", "/delivery-challans", "/service-bills", "/customer-payments"].includes(i.path)
+  (i) => !["/dashboard", "/customers", "/projects", "/delivery-challans", "/service-bills", "/customer-payments", "/employees", "/leave-management"].includes(i.path)
 );
 
 export default function AppRoutes() {
@@ -33,6 +35,8 @@ export default function AppRoutes() {
           <Route path="/service-reports" element={<ServiceReportManagement />} />
           <Route path="/service-bills" element={<ServiceBillManagement />} />
           <Route path="/customer-payments" element={<CustomerPaymentManagement />} />
+          <Route path="/employees" element={<EmployeeManagement />} />
+          <Route path="/leave-management" element={<LeaveManagement />} />
 
           {placeholders.map((p) => (
             <Route

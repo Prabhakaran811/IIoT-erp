@@ -2,7 +2,7 @@ import {
   LayoutDashboard, Users, FolderKanban, 
   type LucideIcon,
   Truck,
-  Wrench, Receipt,
+  Wrench, Receipt, CalendarDays,
 } from "lucide-react";
 
 export interface NavItem {
@@ -37,6 +37,13 @@ export const NAV_SECTIONS: NavSection[] = [
       { label: "Delivery Challans", path: "/delivery-challans", icon: Truck },
       { label: "Service Bills", path: "/service-bills", icon: Receipt },
       { label: "Customer Payments", path: "/customer-payments", icon: Receipt },
+    ],
+  },
+  {
+    title: "HR",
+    items: [
+      { label: "Employees", path: "/employees", icon: Users },
+      { label: "Leave Management", path: "/leave-management", icon: CalendarDays },
     ],
   },
 ];
